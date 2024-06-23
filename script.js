@@ -23,3 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function currentSlide(n) {
+    var slides = document.getElementsByClassName("slide");
+    var dots = document.getElementsByClassName("dot");
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[n-1].style.display = "block";  
+    dots[n-1].className += " active";
+  }
